@@ -4,11 +4,17 @@ import { Client, GatewayIntentBits } from "discord.js";
 import { configuration } from "./config.js";
 import { loadCommands } from "./services/discord/commandLoader.js";
 import { loadEvents } from "./services/discord/eventLoader.js";
+import { prepareDatabase } from "./services/database/db.js";
 
 configuration.bot = new Client({
-     intents: [GatewayIntentBits.Guilds, GatewayIntentBits.MessageContent, GatewayIntentBits.GuildMessages]
+     intents: [
+          GatewayIntentBits.Guilds,
+          GatewayIntentBits.MessageContent,
+          GatewayIntentBits.GuildMessages,
+     ],
 });
 
+await prepareDatabase();
 await loadCommands();
 await loadEvents(configuration.bot);
 
