@@ -5,5 +5,5 @@ export default {
      execute: (client: Client) => {
           console.log(`Logged in as ${client.user?.tag}!`);
      },
-     trigger: "clientReady"
+     trigger: "clientReady",
 } satisfies Event<"clientReady">;

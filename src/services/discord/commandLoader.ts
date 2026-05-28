@@ -20,7 +20,10 @@ export async function loadCommands() {
 
                const command = await import(filePath);
 
-               configuration.commands.set(command.default.data.name, command.default as Command);
+               configuration.commands.set(
+                    command.default.data.name,
+                    command.default as Command,
+               );
           }
      }
 }

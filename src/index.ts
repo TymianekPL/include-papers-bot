@@ -6,7 +6,7 @@ import { loadCommands } from "./services/discord/commandLoader.js";
 import { loadEvents } from "./services/discord/eventLoader.js";
 
 configuration.bot = new Client({
-     intents: [GatewayIntentBits.Guilds]
+     intents: [GatewayIntentBits.Guilds, GatewayIntentBits.MessageContent, GatewayIntentBits.GuildMessages]
 });
 
 await loadCommands();

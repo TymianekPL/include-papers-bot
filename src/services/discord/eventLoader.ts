@@ -32,11 +32,11 @@ export async function loadEvents(client: Client): Promise<void> {
 
                if (event.once) {
                     client.once(event.trigger, (...args) =>
-                         event.execute(...args)
+                         event.execute(...args),
                     );
                } else {
                     client.on(event.trigger, (...args) =>
-                         event.execute(...args)
+                         event.execute(...args),
                     );
                }
           }
