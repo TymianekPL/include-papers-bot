@@ -19,7 +19,6 @@ export default defineConfig([
                "semi": ["error", "always"]
           }
      },
-
      {
           files: ["**/*.{ts,mts,cts}"],
           languageOptions: {
